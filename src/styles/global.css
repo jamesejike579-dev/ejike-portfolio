@@ -1,0 +1,46 @@
+:root {
+  font-family: Arial, 'Helvetica Neue', sans-serif;
+  color: #f5f1e8;
+  background: #0d0d0d;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --color-bg: #0d0d0d;
+  --color-surface: #151515;
+  --color-surface-soft: #1b1a18;
+  --color-text: #f5f1e8;
+  --color-muted: #a6a6a6;
+  --color-dim: #77736d;
+  --color-border: #292929;
+  --color-accent: #c8a96b;
+  --color-accent-light: #e1c994;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-mono: Consolas, 'Courier New', monospace;
+  --page-max: 1320px;
+  --page-pad: clamp(22px, 6.3vw, 96px);
+  --motion: 220ms ease;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: var(--color-bg); color: var(--color-text); font-size: 16px; line-height: 1.6; }
+body, button, a { -webkit-tap-highlight-color: transparent; }
+button, input, textarea, select { font: inherit; }
+button { color: inherit; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+::selection { color: var(--color-bg); background: var(--color-accent); }
+:focus-visible { outline: 2px solid var(--color-accent-light); outline-offset: 4px; }
+#main-content { outline: none; }
+.page-gutter { width: min(100% - (2 * var(--page-pad)), var(--page-max)); margin-inline: auto; }
+.eyebrow { font-family: var(--font-mono); color: var(--color-muted); font-size: 10px; letter-spacing: .13em; line-height: 1.5; text-transform: uppercase; }
+.eyebrow-divider { color: var(--color-dim); padding-inline: 7px; }
+.status-dot { display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: var(--color-accent); vertical-align: 1px; box-shadow: 0 0 0 4px rgb(200 169 107 / 10%); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; z-index: 100; top: 12px; left: 12px; transform: translateY(-150%); padding: 12px 16px; color: var(--color-bg); background: var(--color-text); }
+.skip-link:focus { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
