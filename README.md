@@ -15,29 +15,29 @@ A dark, editorial React portfolio built with Vite. The site is designed to grow 
 4. Open **Terminal → New Terminal**. Check that the prompt is inside `ejike-portfolio`. If it is not, use `cd path\to\ejike-portfolio`.
 5. Install the dependencies:
 
-   ```powershell
+   ```bash
    npm install
    ```
 
 6. Start the Vite development server:
 
-   ```powershell
+   ```bash
    npm run dev
    ```
 
 7. Open the local address printed in the terminal, usually `http://localhost:5173/`.
 8. Stop the server with **Ctrl + C** in the terminal. To restart it, run `npm run dev` again.
-9. Create a production build with:
+9. Create a production build:
 
-   ```powershell
+   ```bash
    npm run build
    ```
 
 10. Preview that production build locally:
 
-   ```powershell
-   npm run preview
-   ```
+    ```bash
+    npm run preview
+    ```
 
 This is a Vite-powered React application. During normal development, do **not** open `index.html` directly; use the Vite server so React, routes, and modules work correctly.
 
@@ -45,19 +45,21 @@ This is a Vite-powered React application. During normal development, do **not** 
 
 ```text
 ejike-portfolio/
-├── public/images/projects/  # Local project/editorial imagery
+├── public/
+│   └── images/
+│       └── projects/       # Local project/editorial imagery
 ├── src/
-│   ├── components/          # Navigation, footer, buttons, project cards
-│   ├── data/                # Profile, skills, and the project catalogue
-│   ├── layouts/             # Shared site shell
-│   ├── pages/               # Home, About, Projects, case study, Contact, 404
-│   ├── styles/              # Global tokens, layout, component styles
-│   ├── App.jsx              # React Router route definitions
-│   └── main.jsx             # Application entry point
+│   ├── components/         # Navigation, footer, buttons, project cards
+│   ├── data/               # Profile, skills, and project catalogue
+│   ├── layouts/            # Shared site shell
+│   ├── pages/              # Home, About, Projects, case study, Contact, 404
+│   ├── styles/             # Global tokens, layout, component styles
+│   ├── App.jsx             # React Router route definitions
+│   └── main.jsx            # Application entry point
 ├── index.html
 ├── package.json
 ├── vite.config.js
-└── vercel.json              # React Router fallback for Vercel
+└── vercel.json             # React Router fallback for Vercel
 ```
 
 ## Add a project
@@ -73,7 +75,9 @@ ejike-portfolio/
 
 ### AUREN image note
 
-The AUREN visuals currently in `public/images/projects/` are editorial reference photos, not screenshots of the AUREN implementation. The case study labels them accordingly. Replace them with your own real screenshots when you have them. The two current reference images were downloaded from Unsplash (photo IDs `photo-1511499767150-a48a237f0083` and `photo-1523275335684-37898b6baf30`). Verify current source details and licensing before redistribution or replacing them in a public deployment.
+The AUREN visuals currently in `public/images/projects/` are editorial reference photos, not screenshots of the AUREN implementation. The case study labels them accordingly. Replace them with your own real screenshots when you have them.
+
+The two current reference images were downloaded from Unsplash (photo IDs `photo-1511499767150-a48a237f0083` and `photo-1523275335684-37898b6baf30`). Verify current source details and licensing before redistribution or replacing them in a public deployment.
 
 ## Update contact information
 
@@ -87,8 +91,14 @@ Edit the `profile` object in `src/data/profile.js`. The name, email, phone, loca
 
 ## Deployment
 
-This project is prepared for static hosting; it has not been published. `vercel.json` configures Vercel to serve the Vite entry page for client-side React Router URLs, so direct visits and refreshes on `/about`, `/projects`, and `/projects/auren` can reach the app. For another host, use that provider's documented single-page-app rewrite/fallback instead of copying Vercel configuration blindly. A static build is written to `dist/`.
+This project is deployed on Vercel and prepared for static hosting. `vercel.json` configures Vercel to serve the Vite entry page for client-side React Router URLs, so direct visits and refreshes on `/about`, `/projects`, and `/projects/auren` can reach the app.
+
+For another host, use that provider's documented single-page-app rewrite/fallback instead of copying Vercel configuration blindly. A static build is written to `dist/`.
 
 ## Checks
 
-The production build completed successfully. Automated browser checks in the local production preview covered direct visits to the main routes, the AUREN case study, both not-found states, category filtering, browser back/forward, working mail and telephone links, image decoding, and the mobile menu (open, Escape-close, and route-selection close). Horizontal overflow was checked at desktop, tablet (768px), and mobile (390px) widths; keyboard skip-link order and reduced-motion scrolling were checked, and no browser console or page errors were reported. The main routes were also visually reviewed at desktop, tablet, and mobile sizes. Vercel hosting itself and a live deployment were not tested. The production app is static and has no backend or message-delivery service. No AUREN checkout, payment processing, account system, cart, or inventory feature is claimed.
+The production build completed successfully. Automated browser checks in the local production preview covered direct visits to the main routes, the AUREN case study, both not-found states, category filtering, browser back/forward, working mail and telephone links, image decoding, and the mobile menu (open, Escape-close, and route-selection close).
+
+Horizontal overflow was checked at desktop, tablet (768px), and mobile (390px) widths. Keyboard skip-link order and reduced-motion scrolling were checked, and no browser console or page errors were reported. The main routes were also visually reviewed at desktop, tablet, and mobile sizes.
+
+Vercel hosting itself and a live deployment were not tested as part of these checks. The production app is static and has no backend or message-delivery service. No AUREN checkout, payment processing, account system, cart, or inventory feature is claimed.
